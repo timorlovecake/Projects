@@ -1,0 +1,40 @@
+public class Projext {
+	 static long Arr[]=new long[1000000];
+	  
+	 static long step(int i){
+		 long cnt=1;
+		 long q=i;
+		 while(i!=1){
+			  if(i%2==0)i=i/2;
+			  else
+				  i=3*i+1;
+			  cnt++;
+			if(i!=1)  
+				if(i<q) 
+					return cnt+Arr[i];
+		  }
+		  return cnt;
+	  }
+	  
+	  
+	  public static void main(String[] args) {
+		  
+		
+		 Arr[0]=1;
+		 
+		 int  max=0;
+		 for(int i=1;i<=1000000;i++){			
+			 Arr[i]=step(i);
+		
+			 if(Arr[i]>Arr[max]) max=i;
+			
+			 System.out.println("run");
+		 }
+		
+		 System.out.println("End");
+		 System.out.println(max);
+	  }
+	  
+
+	
+ }
